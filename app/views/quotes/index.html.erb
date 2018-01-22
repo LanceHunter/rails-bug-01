@@ -8,8 +8,15 @@
         <%= quote.author %>
       </footer>
     </blockquote>
+  <% if quote.created_at %>
     <div class="created">
       <%= time_ago_in_words(quote.created_at) %> ago
     </div>
+  <% else %>
+  <div class="created">
+    <%= time_ago_in_words(Time.now) %> ago
+  </div>
+  <% end %>
+
   </section>
 <% end %>
